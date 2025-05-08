@@ -1,91 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        .login-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .login-container h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .login-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .login-btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Header Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+    }
+
+    header h1::before {
+      content: "✨";
+      margin-right: 10px;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      background: transparent;
+      border: 2px solid transparent;
+    }
+
+    nav ul li a:hover {
+      background-color: #ffffff;
+      color: #2c5364;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 10px #ffffff90;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="login-container">
-        <img src="\Users\jefer\Downloads\PiliPinas Matalino Infographics.png" alt="Logo" />
-        <h2>Login</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="studentId">Student ID</label>
-                <input type="text" id="studentId" name="studentId" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
-        <p id="message" style="color: red; text-align: center; margin-top: 10px;"></p>
-    </div>
-
- <script>
-    const validStudentIds = ["12345", "67890", "11223", "Kyle-Centeno"];
-
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const studentId = document.getElementById('studentId').value.trim();
-      const password = document.getElementById('password').value.trim();
-      const message = document.getElementById('message');
-
-      if (validStudentIds.includes(studentId) && password) {
-        message.style.color = "green";
-        message.textContent = "Login successful!";
-      } else {
-        message.style.color = "red";
-        message.textContent = "Invalid Student ID or Password.";
-      }
-    });
-  </script>
+  <header>
+    <h1>Team 4</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 </body>
 </html>

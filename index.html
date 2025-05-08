@@ -53,6 +53,7 @@
 </head>
 <body>
     <div class="login-container">
+        <img src="\Users\jefer\Downloads\PiliPinas Matalino Infographics.png" alt="Logo" />
         <h2>Login</h2>
         <form id="loginForm">
             <div class="form-group">
@@ -68,29 +69,23 @@
         <p id="message" style="color: red; text-align: center; margin-top: 10px;"></p>
     </div>
 
-    <script>
-        const loginForm = document.getElementById('loginForm');
-        const message = document.getElementById('message');
+ <script>
+    const validStudentIds = ["12345", "67890", "11223", "Kyle-Centeno"];
 
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const studentId = document.getElementById('studentId').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const message = document.getElementById('message');
 
-            const studentId = document.getElementById('studentId').value;
-            const password = document.getElementById('password').value;
-
-            // Example hardcoded credentials
-            const validStudentId = "12345";
-            const validPassword = "password";
-
-            if (studentId === validStudentId && password === validPassword) {
-                message.style.color = "green";
-                message.textContent = "Login successful!";
-            } else {
-                message.style.color = "red";
-                message.textContent = "Invalid Student ID or Password.";
-            }
-        });
- 
-    </script>
+      if (validStudentIds.includes(studentId) && password) {
+        message.style.color = "green";
+        message.textContent = "Login successful!";
+      } else {
+        message.style.color = "red";
+        message.textContent = "Invalid Student ID or Password.";
+      }
+    });
+  </script>
 </body>
 </html>
